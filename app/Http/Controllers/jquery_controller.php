@@ -34,7 +34,7 @@ class jquery_controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //   
     }
 
     /**
@@ -45,7 +45,17 @@ class jquery_controller extends Controller
      */
     public function show($id)
     {
-        //
+        // return $id;
+        if($id == 2)
+        {
+            // return 'oke';
+             return view('JQuery.page_2');
+
+        }elseif($id == 3) 
+
+        {
+            return view('JQuery.3');                
+        }
     }
 
     /**
