@@ -46,16 +46,20 @@ class jquery_controller extends Controller
     public function show($id)
     {
         // return $id;
-        if($id == 2)
-        {
+        // if($id == 2)
+        // {
             // return 'oke';
-             return view('JQuery.page_2');
+            $p_id = $id;
+            $JQ = 'JQuery' . '.' . 'page_' . $id;
+            // return $JQ;
+             return view($JQ, compact('p_id'));
+            
+             
+        // }elseif($id == 3) 
 
-        }elseif($id == 3) 
-
-        {
-            return view('JQuery.3');                
-        }
+        // {
+        //     return view('JQuery.3');                
+        // }
     }
 
     /**
