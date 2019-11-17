@@ -4,15 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class jquery_controller extends Controller {
+class jsController extends Controller {
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
 	public function index() {
-		$p_id = 1;
-		return view('JQuery', compact('p_id'));
+		return view('jsView');
 	}
 
 	/**
@@ -41,20 +40,7 @@ class jquery_controller extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function show($id) {
-		// return $id;
-		// if($id == 2)
-		// {
-		// return 'oke';
-		$p_id = $id;
-		$JQ   = 'JQuery'.'.'.'page_'.$id;
-		// return $JQ;
-		return view($JQ, compact('p_id'));
-
-		// }elseif($id == 3)
-
-		// {
-		//     return view('JQuery.3');
-		// }
+		//
 	}
 
 	/**

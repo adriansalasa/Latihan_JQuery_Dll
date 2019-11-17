@@ -20,3 +20,4 @@ Route::get('/', function () {
 
 Route::get('/JQuery', 'jquery_controller@index');
 Route::get('/JQuery/{id}', 'jquery_controller@show');
+Route::get('/JavaScript', 'jsController@index');

@@ -1,5 +1,5 @@
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
-<script src="{{ asset('js/jquery.min.js') }}"></script>
+<!-- <script src="{{asset('JS/jquery-3.4.1.min.js')}}"></script>
 <script>
 	$(document).ready(function(){
 		$("#Fd_show").click(function(){
@@ -14,7 +14,7 @@
 			$(".hideR").hide();
 		},200);
 	});
-</script>
+</script> -->
 @extends('layout/main')
 
 @section('title', 'Latihan JQuery')
@@ -52,19 +52,22 @@
 				<nav aria-label="pageNav">
 
 				  <ul class="pagination">
-
-					    <li class="page-item disabled">
-					      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-					    </li>
-
-					    <li class="page-item"><a class="page-link" href="/JQuery" id="1">1</a></li>
-
-					    <li class="page-item active" aria-current="page"><span class="sr-only">(current)</span><a class="page-link" href="/JQuery/2" id="2">2</a></li>
-
-					    <li class="page-item"><a class="page-link" href="/JQuery/3" id="3">3</a></li>
-
-					    <li class="page-item"><a class="page-link" href="#">Next</a>
-
+					     <li class="page-item">
+					    	<li class="page-item disabled">
+						      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+						    </li>						    
+						    @for($arrPg = 1; $arrPg <= 5; $arrPg++)
+						    	@if ($arrPg == $p_id)						    	
+						    		<li class="page-item active" aria-currentpage = "page">
+						    			<span class="sr-only">(current)</span><a class="page-link" href="/JQuery/{{$p_id}}" id={{$p_id}}>{{$p_id}}</a>
+						    		</li>
+						    	@else
+						    		<a class="page-link" href="/JQuery/{{$arrPg}}" id={{$arrPg}}>{{$arrPg}}</a>						    	
+						    	@endif
+						    @endfor					    						    
+						    <li class="page-item">
+					      		<a class="page-link" href="#">Next</a>
+					    	</li>
 					    </li>
 
 				  </ul>
@@ -79,5 +82,22 @@
 
 
 </div>
+
+<script src="{{asset('JS/jquery-3.4.1.min.js')}}"></script>
+<script>
+	$(document).ready(function(){
+		$("#Fd_show").click(function(){
+			$(".hideR").show();
+		});
+
+		$("#Fd_hide").click(function(){
+			$(".hideR").hide();
+		});
+
+		setTimeout(function(){
+			$(".hideR").hide();
+		},200);
+	});
+</script>
 
 @endsection
